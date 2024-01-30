@@ -16,3 +16,4 @@ Summarizer is a Python application built with Flask and newspaper3k for summariz
 - HTML,CSS
 - Flask
 - newspaper3k
+![127 0 0 1_5000_summarize](https://github.com/Arunkaarthic/Summarizer/assets/158178371/756ccca7-b12b-400b-9e7b-fe909d932e3e)
