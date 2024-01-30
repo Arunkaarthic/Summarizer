@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body{background-image: linear-gradient(
+            25deg,
+            hsl(0deg 89% 35%) 0%,
+            hsl(0deg 89% 33%) 2%,
+            hsl(0deg 90% 32%) 3%,
+            hsl(0deg 90% 31%) 5%,
+            hsl(0deg 91% 29%) 6%,
+            hsl(0deg 92% 28%) 8%,
+            hsl(0deg 91% 27%) 9%,
+            hsl(0deg 92% 26%) 11%,
+            hsl(0deg 94% 24%) 13%,
+            hsl(0deg 93% 23%) 15%,
+            hsl(0deg 95% 22%) 17%,
+            hsl(0deg 94% 21%) 19%,
+            hsl(0deg 96% 19%) 22%,
+            hsl(0deg 96% 18%) 25%,
+            hsl(0deg 95% 17%) 29%,
+            hsl(0deg 97% 15%) 33%,
+            hsl(0deg 97% 14%) 39%,
+            hsl(0deg 97% 13%) 46%,
+            hsl(0deg 100% 12%) 55%,
+            hsl(0deg 100% 11%) 66%,
+            hsl(0deg 100% 9%) 81%,
+            hsl(0deg 100% 8%) 100%
+            );
+        }
+        .title {
+            text-align: center;
+            margin: auto;
+            font-size: 40px;
+            width: 65%;
+            line-height: 1.6;
+            background-color: aliceblue;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #date {
+            margin: auto;
+            padding: 5px;
+            width: 65%;
+            font-size: 20px;
+            line-height: 1.4;
+            background-color: aliceblue;
+            border-radius: 5px;
+        }
+        #image{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            max-width: 100;
+            border-radius: 6px;
+            height: auto;
+        }
+        .row{
+            display: flex;
+            margin: 0 -5px;
+        }
+        .column1{
+            flex: 15%;
+            padding: 0 10px;
+        }
+        .column2{
+            flex: 70%;
+            width: min-content;
+            padding: 0 10px;
+        }
+        .column4{
+            flex: 15%;
+            padding: 0 10px;
+        }
+        .card1 {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            text-align: left;
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+        .card2 {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding-top: 5%;
+            padding-bottom: 5px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+        #para1{
+            font-size: 25px;
+            line-height: 1.5;
+        }
+        #para2{
+            font-size: 25px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">{{ title }}</h1>
+    <br>
+    <p id="date">Published on: {{ publish_date }}<br>Author(s): {{ ', '.join(authors) }}</p> 
+    <br>
+    <img id="image" src="{{ header_image_url }}" alt="Header Image">
+    <br>
+    <div class="row">
+        
+        <div class="column1"></div>
+        <div class="column2">
+            <div class="card1">   
+            <p id="para1">{{ content | safe }}</p>
+            </div>
+        </div>
+        <div class="column4">
+            <div class="card2">
+            <p id="para2">words : {{ words | safe}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
